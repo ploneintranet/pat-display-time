@@ -5,7 +5,45 @@
     </head>
     <body>
         <main role="main">
-            <time class="pat-displaytime" datetime="2015-01-20T08:00Z">20 January 2015, 08:00</time>
+            <pre><code>
+&lt;time class="pat-displaytime"
+      datetime="2015-01-20T08:00Z"&gt;
+    20 January 2015, 08:00
+&lt;/time&gt;</code></pre>
+            <p>
+                <time class="pat-displaytime"
+                      datetime="2015-01-20T08:00Z">
+                    ! 20 January 2015, 08:00
+                </time>
+            </p>
+            <pre><code>
+&lt;time class="pat-displaytime"
+      datetime="2015-01-20T08:00Z"
+      data-pat-displaytime="outputFormat:MMMM dddd Do YYYY, h:mm:ss a"&gt;
+    20 January 2015, 08:00
+&lt;/time&gt;</code></pre>
+            <p>
+                <time class="pat-displaytime"
+                      datetime="2015-01-20T08:00Z"
+                      data-pat-displaytime="outputFormat:MMMM dddd Do YYYY, h:mm:ss">
+                    ! 20 January 2015, 08:00
+                </time>
+            </p>
+
+            <pre><code>
+&lt;time class="pat-displaytime"
+      datetime="2015-01-20T08:00Z"
+      data-pat-displaytime="displayFormat:L"&gt;
+    20 January 2015, 08:00
+&lt;/time&gt;</code></pre>
+            <p>
+                <time class="pat-displaytime"
+                      datetime="2015-01-20T08:00Z"
+                      data-pat-displaytime="outputFormat:L">
+                    ! 20 January 2015, 08:00
+                </time>
+            </p>
+
         </main>
     </body>
 </html>
