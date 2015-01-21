@@ -1,7 +1,7 @@
 {
-    "name": "pat-displaytime",
+    "name": "pat-display-time",
     "version": "0.0.1",
-    "homepage": "https://github.com/ploneintranet/pat-displaytime",
+    "homepage": "https://github.com/ploneintranet/pat-display-time",
     "dependencies": {
         "patternslib": "master"
     }

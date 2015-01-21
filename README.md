@@ -1,12 +1,12 @@
-# pat-displaytime
+# pat-display-time
 A pattern to make use of moment.js ([momentjs.com](http://momentjs.com), [github](https://github.com/moment/moment/)) with PatternsLib.
 
-This pattern's name is pat-displaytime. It is activated on a DOM element by giving the element the HTML class `pat-displaytime` and a `datetime` attribute.
+This pattern's name is pat-display-time. It is activated on a DOM element by giving the element the HTML class `pat-display-time` and a `datetime` attribute.
 
 
 For example:
 
-    <time class="pat-displaytime" datetime="2015-01-20T08:00Z">20 January 2015, 08:00</time>
+    <time class="pat-display-time" datetime="2015-01-20T08:00Z">20 January 2015, 08:00</time>
 
 ## Development
 

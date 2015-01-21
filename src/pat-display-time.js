@@ -13,7 +13,7 @@
 }(this, function(registry, Parser) {
     'use strict';
 
-    var parser = new Parser('displaytime');
+    var parser = new Parser('display-time');
     // input datetime options
     parser.add_argument('format', '');
     parser.add_argument('locale', '');
@@ -23,9 +23,9 @@
     parser.add_argument('outputFormat', '');
     parser.add_argument('outputLocale', '');
 
-    var displaytime = {
-        name: 'displaytime',
-        trigger: '.pat-displaytime',
+    var displayTime = {
+        name: 'display-time',
+        trigger: '.pat-display-time',
 
         init: function patDisplayTimeInit($el, opts) {
             var options = parser.parse($el, opts);
@@ -40,9 +40,9 @@
         },
 
         processDate: function patDisplayTimeProcessDate($el, options) {
-            var datestr = $el.attr('datetime');
+            var dateStr = $el.attr('datetime');
             // var moment = require(moment);
-            var date = moment(datestr, options.format, options.locale, options.strict);
+            var date = moment(dateStr, options.format, options.locale, options.strict);
             if (options.outputFormat.length) {
                 date = date.format(options.outputFormat);
             }
@@ -50,5 +50,5 @@
         }
     };
     // Register the pattern object in the registry.
-    registry.register(displaytime);
+    registry.register(displayTime);
 }));

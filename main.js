@@ -12,10 +12,10 @@ require.config({
         "pat-utils":            "bower_components/patternslib/src/core/utils",
         "patterns":             "bower_components/patternslib/bundle",
         "moment":               "bower_components/moment/moment",
-        "pat-displaytime":      "src/pat-displaytime"
+        "pat-display-time":      "src/pat-display-time"
     }
 });
-require(["pat-registry", "pat-displaytime"], function(registry, colorchanger) {
+require(["pat-registry", "pat-display-time"], function(registry, colorchanger) {
     window.patterns = registry;
     registry.init();
     return;

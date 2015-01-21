@@ -1,5 +1,5 @@
 {
-    "name": "pat-displaytime",
+    "name": "pat-display-time",
     "version": "0.0.1",
     "description": "A pattern that renders a timestamp nicely",
     "author": {
