@@ -10,9 +10,8 @@
         } else {
             factory(root.patterns, root.patterns.Parser);
         }
-}(this, function(registry, Parser) {
+}(this, function(registry, Parser, moment) {
     'use strict';
-
     var parser = new Parser('display-time');
     // input datetime options
     parser.add_argument('format', '');

@@ -8,13 +8,16 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:ploneintranet/pat-displatime.git"
+        "url": "git@github.com:ploneintranet/pat-displaytime.git"
     },
     "dependencies": {
         "http-server": "^0.7.3"
     },
     "devDependencies": {
         "bower": "latest",
+        "phantom-jasmine": "0.1.8",
+        "phantomjs": "1.9.8",
+        "jshint": "~0.9.1",
         "requirejs": ""
     },
     "licenses": [

@@ -4,5 +4,8 @@
     "homepage": "https://github.com/ploneintranet/pat-display-time",
     "dependencies": {
         "patternslib": "master"
+    },
+    "devDependencies": {
+        "jasmine": ""
     }
 }
