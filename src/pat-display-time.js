@@ -29,13 +29,13 @@
 
         init: function patDisplayTimeInit($el, opts) {
             var options = parser.parse($el, opts);
-            switch (options.strict) {
-                // change 'true' to true
-                case 'true': options.strict = true;
-                             break;
-                // anything else is false
-                default: options.strict = false;
+
+            if (options.strict === 'true') {
+                options.strict = true;
+            } else {
+                options.strict = false;
             }
+
             this.processDate($el, options);
         },
 
