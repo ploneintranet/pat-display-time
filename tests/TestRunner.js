@@ -6,7 +6,7 @@ require.config({
         "jquery": "../bower_components/jquery/jquery",
         "logging": "../bower_components/logging/src/logging",
         "moment": "../bower_components/moment/moment",
-        "pat-displaytime": "../src/pat-displaytime",
+        "pat-display-time": "../src/pat-display-time",
         "pat-compat": "../bower_components/patternslib/src/core/compat",
         "pat-jquery-ext": "../bower_components/patternslib/src/core/jquery-ext",
         "pat-logger": "../bower_components/patternslib/src/core/logger",
@@ -30,11 +30,11 @@ define("TestRunner", function() {
     require([
         "jasmine-html",
         "logging",
-        "pat-displaytime"
+        "pat-display-time"
     ], function(jasmine) {
         require([
             "console-runner",
-            "specs/displaytime.js"
+            "specs/display-time.js"
         ], function() {
             var jasmineEnv = jasmine.getEnv();
             var reporter;
