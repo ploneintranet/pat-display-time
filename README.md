@@ -19,7 +19,3 @@ To clean up local directory (after running make all) run:
 ```shell
     > make clean
 ```
-### Testing
-```shell
-    > make check
-```
