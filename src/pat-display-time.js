@@ -21,6 +21,7 @@
     // output options
     parser.add_argument('outputFormat', '');
     parser.add_argument('outputLocale', '');
+    parser.add_argument('fromNow', false);
 
     var displayTime = {
         name: 'display-time',
@@ -44,6 +45,9 @@
             var date = moment(dateStr, options.format, options.locale, options.strict);
             if (options.outputFormat.length) {
                 date = date.format(options.outputFormat);
+            }
+            if (options.fromNow) {
+                date = date.fromNow();
             }
             $el.text(date);
         }
