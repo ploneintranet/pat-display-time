@@ -19,6 +19,10 @@ To clean up local directory (after running make all) run:
 ```shell
     > make clean
 ```
+To just serve the demo:
+```shell
+    > make serve
+```
 ### Testing
 ```shell
     > make check

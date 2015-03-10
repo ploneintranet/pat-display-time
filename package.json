@@ -10,19 +10,14 @@
         "type": "git",
         "url": "git@github.com:ploneintranet/pat-displaytime.git"
     },
-    "dependencies": {
-        "http-server": "^0.7.3"
-    },
     "devDependencies": {
         "bower": "latest",
+        "http-server": "^0.7.3",
         "phantom-jasmine": "0.1.8",
         "phantomjs": "1.9.8",
         "jshint": "~0.9.1",
         "requirejs": ""
     },
-    "licenses": [
-        {
-            "type": "MIT"
-        }
-    ]
+    "homepage": "https://github.com:ploneintranet/pat-displaytime",
+    "license": "BSD"
 }

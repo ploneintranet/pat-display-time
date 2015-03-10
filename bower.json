@@ -1,11 +1,15 @@
 {
-    "name": "pat-display-time",
-    "version": "0.0.1",
-    "homepage": "https://github.com/ploneintranet/pat-display-time",
-    "dependencies": {
-        "patternslib": "master"
-    },
-    "devDependencies": {
+  "name": "pat-display-time",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ploneintranet/pat-display-time",
+  "description": "A pattern for rendering a timestamp nicely",
+  "license": "BSD",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "patternslib": "master",
         "jasmine": ""
-    }
+  }
 }
