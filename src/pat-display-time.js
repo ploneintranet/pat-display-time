@@ -1,6 +1,7 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([
+            'pat-base',
             'pat-registry',
             'pat-parser',
             'moment'
@@ -8,9 +9,9 @@
                 return factory.apply(this, arguments);
             });
         } else {
-            factory(root.patterns, root.patterns.Parser);
+            factory(Base, root.patterns, root.patterns.Parser);
         }
-}(this, function(registry, Parser, moment) {
+}(this, function(Base, registry, Parser, moment) {
     'use strict';
     var parser = new Parser('display-time');
     // input datetime options
@@ -23,7 +24,7 @@
     parser.add_argument('outputLocale', '');
     parser.add_argument('fromNow', false);
 
-    var displayTime = {
+    return Base.extend({
         name: 'display-time',
         trigger: '.pat-display-time',
 
@@ -51,7 +52,5 @@
             }
             $el.text(date);
         }
-    };
-    // Register the pattern object in the registry.
-    registry.register(displayTime);
+    });
 }));
