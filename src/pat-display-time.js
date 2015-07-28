@@ -20,9 +20,9 @@
     parser.add_argument('strict', false);
 
     // output options
-    parser.add_argument('fromNow', false);
-    parser.add_argument('outputFormat', '');
-    parser.add_argument('outputLocale', '');
+    parser.add_argument('from-now', false);
+    parser.add_argument('output-format', '');
+    parser.add_argument('output-locale', '');
 
 
     var displayTime = {
@@ -47,8 +47,8 @@
             var date = moment(dateStr, options.format, options.locale, options.strict);
             if (options.fromNow == true) {
                 date = date.fromNow();
-            } else if (options.outputFormat.length) {
-                date = date.format(options.outputFormat);
+            } else if (options.output.format.length) {
+                date = date.format(options.output.format);
             }
             $el.text(date);
         }
