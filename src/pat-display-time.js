@@ -32,6 +32,7 @@
 
     // output options
     parser.add_argument("from-now", false);
+    parser.add_argument("no-suffix", false);
     parser.add_argument("output-format", "");
 
     return Base.extend({
@@ -48,7 +49,7 @@
             var date_str = $el.attr("datetime");
             var date = moment(date_str, options.format, options.locale, options.strict);
             if (options.fromNow === true) {
-                date = date.fromNow();
+                date = date.fromNow(options.noSuffix);
             } else if (options.outputFormat.length) {
                 date = date.format(options.outputFormat);
             }
