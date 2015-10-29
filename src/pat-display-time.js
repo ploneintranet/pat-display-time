@@ -1,19 +1,30 @@
 (function (root, factory) {
+    // We use AMD (Asynchronous Module Definition) or browser globals to create
+    // this module.
     if (typeof define === "function" && define.amd) {
         define([
+            "jquery",
+            "pat-base",
             "pat-registry",
             "pat-parser",
+            "pat-logger",
             "moment"
-            ], function() {
-                return factory.apply(this, arguments);
-            });
-        } else {
-            factory(root.patterns, root.patterns.Parser);
-        }
-}(this, function(registry, Parser, moment) {
+        ], function() {
+            return factory.apply(this, arguments);
+        });
+    } else {
+        // If require.js is not available, you'll need to make sure that these
+        // global variables are available.
+        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger);
+    }
+}(this, function($, Base, registry, Parser, logger, moment) {
     "use strict";
 
+    var log = logger.getLogger("pat-display-time");
+    log.debug("pattern loaded");
+
     var parser = new Parser("display-time");
+
     // input datetime options
     parser.add_argument("format", "");
     parser.add_argument("locale", "");
@@ -24,21 +35,20 @@
     parser.add_argument("output-format", "");
     parser.add_argument("output-locale", "");
 
-
-    var displayTime = {
+    return Base.extend({
         name: "display-time",
         trigger: ".pat-display-time",
 
-        init: function patDisplayTimeInit($el, opts) {
-            var options = parser.parse($el, opts);
+        init: function initUndefined () {
+            this.options = parser.parse(this.$el);
 
-            if (options.strict === "true") {
-                options.strict = true;
+            if (this.options.strict === "true") {
+                this.options.strict = true;
             } else {
-                options.strict = false;
+                this.options.strict = false;
             }
 
-            this.processDate($el, options);
+            this.processDate(this.$el, this.options);
         },
 
         processDate: function patDisplayTimeProcessDate($el, options) {
@@ -52,7 +62,5 @@
             }
             $el.text(date);
         }
-    };
-    // Register the pattern object in the registry.
-    registry.register(displayTime);
+    });
 }));
