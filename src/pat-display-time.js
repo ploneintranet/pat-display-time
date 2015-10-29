@@ -41,13 +41,7 @@
 
         init: function initUndefined () {
             this.options = parser.parse(this.$el);
-
-            if (this.options.strict === "true") {
-                this.options.strict = true;
-            } else {
-                this.options.strict = false;
-            }
-
+            log.debug("pattern initialized");
             this.processDate(this.$el, this.options);
         },
 
