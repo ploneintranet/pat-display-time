@@ -52,9 +52,8 @@
         },
 
         processDate: function patDisplayTimeProcessDate($el, options) {
-            var dateStr = $el.attr("datetime");
-            // var moment = require(moment);
-            var date = moment(dateStr, options.format, options.locale, options.strict);
+            var date_str = $el.attr("datetime");
+            var date = moment(date_str, options.format, options.locale, options.strict);
             if (options.fromNow === true) {
                 date = date.fromNow();
             } else if (options.output.format.length) {
