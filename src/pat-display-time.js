@@ -15,7 +15,7 @@
     } else {
         // If require.js is not available, you'll need to make sure that these
         // global variables are available.
-        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger);
+        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger, moment);
     }
 }(this, function($, Base, registry, Parser, logger, moment) {
     "use strict";
