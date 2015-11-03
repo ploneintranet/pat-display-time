@@ -1,58 +1,59 @@
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
+    // We use AMD (Asynchronous Module Definition) or browser globals to create
+    // this module.
+    if (typeof define === "function" && define.amd) {
         define([
-            'pat-registry',
-            'pat-parser',
-            'moment'
-            ], function() {
-                return factory.apply(this, arguments);
-            });
-        } else {
-            factory(root.patterns, root.patterns.Parser);
-        }
-}(this, function(registry, Parser, moment) {
-    'use strict';
+            "jquery",
+            "pat-base",
+            "pat-registry",
+            "pat-parser",
+            "pat-logger",
+            "moment"
+        ], function() {
+            return factory.apply(this, arguments);
+        });
+    } else {
+        // If require.js is not available, you'll need to make sure that these
+        // global variables are available.
+        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger, moment);
+    }
+}(this, function($, Base, registry, Parser, logger, moment) {
+    "use strict";
 
-    var parser = new Parser('display-time');
+    var log = logger.getLogger("pat-display-time");
+    log.debug("pattern loaded");
+
+    var parser = new Parser("display-time");
+
     // input datetime options
-    parser.add_argument('format', '');
-    parser.add_argument('locale', '');
-    parser.add_argument('strict', false);
+    parser.add_argument("format", "");
+    parser.add_argument("locale", "");
+    parser.add_argument("strict", false);
 
     // output options
-    parser.add_argument('from-now', false);
-    parser.add_argument('output-format', '');
-    parser.add_argument('output-locale', '');
+    parser.add_argument("from-now", false);
+    parser.add_argument("output-format", "");
+    parser.add_argument("output-locale", "");
 
+    return Base.extend({
+        name: "display-time",
+        trigger: ".pat-display-time",
 
-    var displayTime = {
-        name: 'display-time',
-        trigger: '.pat-display-time',
-
-        init: function patDisplayTimeInit($el, opts) {
-            var options = parser.parse($el, opts);
-
-            if (options.strict === 'true') {
-                options.strict = true;
-            } else {
-                options.strict = false;
-            }
-
-            this.processDate($el, options);
+        init: function initUndefined () {
+            this.options = parser.parse(this.$el);
+            log.debug("pattern initialized");
+            this.processDate();
         },
 
-        processDate: function patDisplayTimeProcessDate($el, options) {
-            var dateStr = $el.attr('datetime');
-            // var moment = require(moment);
-            var date = moment(dateStr, options.format, options.locale, options.strict);
-            if (options.fromNow == true) {
+        processDate: function patDisplayTimeProcessDate() {
+            var date_str = this.$el.attr("datetime");
+            var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
+            if (this.options.fromNow === true) {
                 date = date.fromNow();
-            } else if (options.output.format.length) {
-                date = date.format(options.output.format);
+            } else if (this.options.output.format.length) {
+                date = date.format(this.options.output.format);
             }
-            $el.text(date);
+            this.$el.text(date);
         }
-    };
-    // Register the pattern object in the registry.
-    registry.register(displayTime);
+    });
 }));

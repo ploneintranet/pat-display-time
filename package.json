@@ -2,24 +2,23 @@
     "name": "pat-display-time",
     "version": "0.0.1",
     "description": "A pattern that renders a timestamp nicely",
+    "keywords": [
+        "patternslib",
+        "pattern"
+    ],
     "author": {
         "name": "Plone Intranet Team",
         "email": "ploneintranet-dev@groups.io"
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:ploneintranet/pat-displatime.git"
+        "url": "git@github.com:ploneintranet/pat-display-time.git"
     },
-    "dependencies": {
-        "http-server": "^0.7.3"
-    },
+    "dependencies": {},
     "devDependencies": {
         "bower": "latest",
-        "requirejs": ""
+        "requirejs": "",
+        "http-server": ""
     },
-    "licenses": [
-        {
-            "type": "MIT"
-        }
-    ]
+    "license": "BSD-3-Clause"
 }
