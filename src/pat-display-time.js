@@ -42,18 +42,18 @@
         init: function initUndefined () {
             this.options = parser.parse(this.$el);
             log.debug("pattern initialized");
-            this.processDate(this.$el, this.options);
+            this.processDate();
         },
 
-        processDate: function patDisplayTimeProcessDate($el, options) {
-            var date_str = $el.attr("datetime");
-            var date = moment(date_str, options.format, options.locale, options.strict);
-            if (options.fromNow === true) {
+        processDate: function patDisplayTimeProcessDate() {
+            var date_str = this.$el.attr("datetime");
+            var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
+            if (this.options.fromNow === true) {
                 date = date.fromNow();
-            } else if (options.output.format.length) {
-                date = date.format(options.output.format);
+            } else if (this.options.output.format.length) {
+                date = date.format(this.options.output.format);
             }
-            $el.text(date);
+            this.$el.text(date);
         }
     });
 }));
