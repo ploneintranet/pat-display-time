@@ -15,7 +15,7 @@
     } else {
         // If require.js is not available, you'll need to make sure that these
         // global variables are available.
-        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger);
+        factory($, patterns.Base, patterns, patterns.Parser, patterns.logger, moment);
     }
 }(this, function($, Base, registry, Parser, logger, moment) {
     "use strict";
@@ -42,18 +42,18 @@
         init: function initUndefined () {
             this.options = parser.parse(this.$el);
             log.debug("pattern initialized");
-            this.processDate(this.$el, this.options);
+            this.processDate();
         },
 
-        processDate: function patDisplayTimeProcessDate($el, options) {
-            var date_str = $el.attr("datetime");
-            var date = moment(date_str, options.format, options.locale, options.strict);
-            if (options.fromNow === true) {
-                date = date.fromNow(options.noSuffix);
-            } else if (options.outputFormat.length) {
-                date = date.format(options.outputFormat);
+        processDate: function patDisplayTimeProcessDate() {
+            var date_str = this.$el.attr("datetime");
+            var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
+            if (this.options.fromNow === true) {
+                date = date.fromNow(this.options.noSuffix);
+            } else if (this.options.output.format.length) {
+                date = date.format(this.options.output.format);
             }
-            $el.text(date);
+            this.$el.text(date);
         }
     });
 }));
