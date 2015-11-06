@@ -50,8 +50,8 @@
             var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
             if (this.options.fromNow === true) {
                 date = date.fromNow(this.options.noSuffix);
-            } else if (this.options.output.format.length) {
-                date = date.format(this.options.output.format);
+            } else if (this.options.outputFormat.length) {
+                date = date.format(this.options.outputFormat);
             }
             this.$el.text(date);
         }
