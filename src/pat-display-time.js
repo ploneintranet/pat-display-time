@@ -32,8 +32,8 @@
 
     // output options
     parser.add_argument("from-now", false);
+    parser.add_argument("no-suffix", false);
     parser.add_argument("output-format", "");
-    parser.add_argument("output-locale", "");
 
     return Base.extend({
         name: "display-time",
@@ -49,9 +49,9 @@
             var date_str = this.$el.attr("datetime");
             var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
             if (this.options.fromNow === true) {
-                date = date.fromNow();
-            } else if (this.options.output.format.length) {
-                date = date.format(this.options.output.format);
+                date = date.fromNow(this.options.noSuffix);
+            } else if (this.options.outputFormat.length) {
+                date = date.format(this.options.outputFormat);
             }
             this.$el.text(date);
         }
