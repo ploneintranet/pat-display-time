@@ -47,7 +47,7 @@
 
         processDate: function patDisplayTimeProcessDate() {
             var date_str = this.$el.attr("datetime");
-            var date = moment(date_str, this.options.format, this.options.locale, this.options.strict);
+            var date = moment(date_str, this.options.format, this.options.strict).locale(this.options.locale);
             if (this.options.fromNow === true) {
                 date = date.fromNow(this.options.noSuffix);
             } else if (this.options.outputFormat.length) {
