@@ -15,9 +15,11 @@ require.config({
         "pat-registry":                 "bower_components/patternslib/src/core/registry",
         "pat-utils":                    "bower_components/patternslib/src/core/utils",
         "underscore":                   "bower_components/underscore/underscore",
-        "moment":                       "bower_components/moment/moment"
-
-
+        "moment":                       "bower_components/moment/moment",
+        "moment-locale-de":             "bower_components/moment/locale/de",
+        "moment-locale-nl":             "bower_components/moment/locale/nl",
+        "moment-locale-it":             "bower_components/moment/locale/it",
+        "moment-locale-da":             "bower_components/moment/locale/da"
     },
     "shim": {
         "logging": { "exports": "logging" }
