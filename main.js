@@ -19,7 +19,8 @@ require.config({
         "moment-locale-de":             "bower_components/moment/locale/de",
         "moment-locale-nl":             "bower_components/moment/locale/nl",
         "moment-locale-it":             "bower_components/moment/locale/it",
-        "moment-locale-da":             "bower_components/moment/locale/da"
+        "moment-locale-da":             "bower_components/moment/locale/da",
+        "moment-timezone-data":         "src/moment-timezone-data"
     },
     "shim": {
         "logging": { "exports": "logging" }
