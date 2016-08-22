@@ -31,7 +31,7 @@
 
     // input datetime options
     parser.add_argument("format", "");
-    parser.add_argument("locale", "");
+    parser.add_argument("locale", "en");
     parser.add_argument("strict", false);
 
     // output options
