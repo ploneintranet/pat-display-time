@@ -24,6 +24,13 @@
     var log = logger.getLogger("pat-display-time");
     log.debug("pattern loaded");
 
+    var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+    if (lang === "de") {
+        moment.lang("de");
+    } else {
+        moment.lang("en");
+    }
+
     var parser = new Parser("display-time");
 
     // input datetime options
