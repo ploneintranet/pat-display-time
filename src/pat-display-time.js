@@ -26,9 +26,9 @@
 
     var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
     if (lang === "de") {
-        moment.lang("de");
+        moment.locale("de");
     } else {
-        moment.lang("en");
+        moment.locale("en");
     }
 
     var parser = new Parser("display-time");
