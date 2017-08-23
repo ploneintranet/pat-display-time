@@ -9,7 +9,6 @@
             "pat-parser",
             "pat-logger",
             "moment",
-            "moment-locale-de"
         ], function() {
             return factory.apply(this, arguments);
         });
@@ -25,8 +24,8 @@
     log.debug("pattern loaded");
 
     var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
-    if (lang === "de") {
-        moment.locale("de");
+    if (lang) {
+        moment.locale(lang);
     } else {
         moment.locale("en");
     }
