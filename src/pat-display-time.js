@@ -9,13 +9,13 @@
             "pat-parser",
             "pat-logger",
             "moment",
-            "moment-de",
-            "moment-fr",
-            "moment-it",
-            "moment-pl",
-            "moment-es",
-            "moment-pt-br",
-            "moment-nl"
+            "moment/locale/de",
+            "moment/locale/fr",
+            "moment/locale/it",
+            "moment/locale/pl",
+            "moment/locale/es",
+            "moment/locale/pt-br",
+            "moment/locale/nl"
         ], function() {
             return factory.apply(this, arguments);
         });
