@@ -8,7 +8,14 @@
             "pat-registry",
             "pat-parser",
             "pat-logger",
-            "moment"
+            "moment",
+            "moment/locale/de",
+            "moment/locale/fr",
+            "moment/locale/it",
+            "moment/locale/pl",
+            "moment/locale/es",
+            "moment/locale/pt-br",
+            "moment/locale/nl"
         ], function() {
             return factory.apply(this, arguments);
         });
