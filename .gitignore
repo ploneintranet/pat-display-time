@@ -4,3 +4,8 @@ stamp-bower
 stamp-npm
 *~
 .*.sw?
+0.js
+0.js.map
+bundle.js
+bundle.js.map
+

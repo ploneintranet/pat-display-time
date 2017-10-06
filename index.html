@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>pat-display-time demo</title>
-    <script data-main="main" src="src/bower_components/requirejs/require.js"></script>
+    <script src="bundle.js"></script>
 </head>
 
 <body role="document">
@@ -105,6 +105,164 @@
     <h3>Output</h3>
     <p>
         <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <hr>
+
+    <h1>Localisation</h1>
+
+
+    <h1>pat-display-time demo</h1>
+
+    <h2>Example of default</h2>
+    <h3>Code</h3>
+    <pre>
+        <code>
+            &lt;time class="pat-display-time"
+                  datetime="2015-01-20T08:00Z" data-pat-display-time="locale: de"&gt;
+                20 January 2015, 08:00
+            &lt;/time&gt;
+        </code>
+    </pre>
+
+    <h3>Output</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <hr>
+
+    <h2>Example setting the output format explicitly</h2>
+    <h3>Code</h3>
+    <pre>
+        <code>
+            &lt;time class="pat-display-time"
+                  datetime="2015-01-20T08:00Z"
+                  data-pat-display-time="output-format: MMMM dddd Do YYYY, h:mm:ss a; locale: de"&gt;
+                20 January 2015, 08:00
+            &lt;/time&gt;
+        </code>
+    </pre>
+    <h3>Output</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="output-format: MMMM dddd Do YYYY, h:mm:ss; locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <hr>
+
+    <h2>Output formatted as local</h2>
+    <h3>Code</h3>
+    <pre>
+        <code>
+            &lt;time class="pat-display-time"
+                  datetime="2015-01-20T08:00Z"
+                  data-pat-display-time="output-format: L; locale: de"&gt;
+                20 January 2015, 08:00
+            &lt;/time&gt;
+        </code>
+    </pre>
+    <h3>Output</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="output-format: L; locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <hr>
+
+    <h2>Output formatted as 'from now'</h2>
+    <h3>Code</h3>
+    <pre>
+        <code>
+            &lt;time class="pat-display-time"
+                  datetime="2015-01-20T08:00Z"
+                  data-pat-display-time="from-now: true; locale: de"&gt;
+                20 January 2015, 08:00
+            &lt;/time&gt;
+        </code>
+    </pre>
+    <h3>Output</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <hr>
+
+    <h2>Output formatted as 'from now' with no suffix</h2>
+    <h3>Code</h3>
+    <pre>
+        <code>
+            &lt;time class="pat-display-time"
+                  datetime="2015-01-20T08:00Z"
+                  data-pat-display-time="from-now: true; no-suffix: true; locale: de"&gt;
+                20 January 2015, 08:00
+            &lt;/time&gt;
+        </code>
+    </pre>
+    <h3>Output</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <h2>Translations</h2>
+
+    <h3>EN</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: en">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <h3>DE</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: de">
+            20 January 2015, 08:00
+        </time>
+    </p>
+
+    <h3>NL</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: nl">
+            20 January 2015, 08:00
+        </time>
+    </p>
+    <h3>FR</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: fr">
+            20 January 2015, 08:00
+        </time>
+    </p>
+    <h3>IT</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: it">
+            20 January 2015, 08:00
+        </time>
+    </p>
+    <h3>PL</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: pl">
+            20 January 2015, 08:00
+        </time>
+    </p>
+    <h3>ES</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: es">
+            20 January 2015, 08:00
+        </time>
+    </p>
+    <h3>PT-BR</h3>
+    <p>
+        <time class="pat-display-time" datetime="2015-01-20T08:00Z" data-pat-display-time="from-now: true; no-suffix: true; locale: pt-br">
             20 January 2015, 08:00
         </time>
     </p>
