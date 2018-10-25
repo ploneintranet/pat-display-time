@@ -26,7 +26,7 @@
 
     var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
     if (lang) {
-        import('moment/locale/'+lang+'.js').then(() => {
+        import('moment/locale/de.js').then(() => {
             moment.locale(lang);
         } )
     } else {
@@ -57,8 +57,27 @@
 
         processDate: function patDisplayTimeProcessDate() {
 
-            var date_str = this.$el.attr("datetime");
-            import('moment/locale/'+lang+'.js').then(() => {
+            function importLocale(lang) {
+                // en language is not in chunks, resolve it
+                if (lang === 'en') {
+                    return Promise.resolve();
+                }
+
+                // try to find language in chunks
+                return import('moment/locale/' + lang + '.js')
+                    .catch(() => {
+                        // lang does not exists
+                        // if language was not found, use default en
+                        return null;
+                    });
+            }
+
+            importLocale(lang).then(() => {
+                // info about used language for moment
+                console.log('Used language: ' + (lang || 'en'));
+
+
+                var date_str = this.$el.attr("datetime");
 
                 var date = moment(date_str, this.options.format, this.options.strict)
                     .locale(this.options.locale);
