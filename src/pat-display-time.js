@@ -1,3 +1,4 @@
+
 (function (root, factory) {
     // We use AMD (Asynchronous Module Definition) or browser globals to create
     // this module.
@@ -9,13 +10,6 @@
             "pat-parser",
             "pat-logger",
             "moment",
-            "moment/locale/de",
-            "moment/locale/fr",
-            "moment/locale/it",
-            "moment/locale/pl",
-            "moment/locale/es",
-            "moment/locale/pt-br",
-            "moment/locale/nl"
         ], function() {
             return factory.apply(this, arguments);
         });
@@ -32,7 +26,9 @@
 
     var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
     if (lang) {
-        moment.locale(lang);
+        import('moment/locale/'+lang+'.js').then(() => {
+            moment.locale(lang);
+        } )
     } else {
         moment.locale("en");
     }
@@ -62,14 +58,17 @@
         processDate: function patDisplayTimeProcessDate() {
 
             var date_str = this.$el.attr("datetime");
-            var date = moment(date_str, this.options.format, this.options.strict)
-                .locale(this.options.locale);
-            if (this.options.fromNow === true) {
-                date = date.fromNow(this.options.noSuffix);
-            } else if (this.options.outputFormat.length) {
-                date = date.format(this.options.outputFormat);
-            }
-            this.$el.text(date);
+            import('moment/locale/'+lang+'.js').then(() => {
+
+                var date = moment(date_str, this.options.format, this.options.strict)
+                    .locale(this.options.locale);
+                if (this.options.fromNow === true) {
+                    date = date.fromNow(this.options.noSuffix);
+                } else if (this.options.outputFormat.length) {
+                    date = date.format(this.options.outputFormat);
+                }
+                this.$el.text(date);
+            })
         }
     });
 }));
