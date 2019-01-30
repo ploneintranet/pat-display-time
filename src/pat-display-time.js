@@ -28,7 +28,7 @@
     if (lang) {
         // we don't support any country-specific language variants, always use first 2 letters
         lang = lang.substr(0,2).toLowerCase();
-        import('moment/locale/de.js').then(() => {
+        import('moment/locale/' + lang + '.js').then(() => {
             moment.locale(lang);
         } )
     } else {
