@@ -24,7 +24,7 @@
     var log = logger.getLogger("pat-display-time");
     log.debug("pattern loaded");
 
-    var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+    var lang = document.getElementsByTagName("html")[0].getAttribute("lang").substr(0,2).toLowerCase();
     if (lang) {
         import('moment/locale/de.js').then(() => {
             moment.locale(lang);
