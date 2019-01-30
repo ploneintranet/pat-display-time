@@ -24,8 +24,10 @@
     var log = logger.getLogger("pat-display-time");
     log.debug("pattern loaded");
 
-    var lang = document.getElementsByTagName("html")[0].getAttribute("lang").substr(0,2).toLowerCase();
+    var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
     if (lang) {
+        // we don't support any country-specific language variants, always use first 2 letters
+        lang = lang.substr(0,2).toLowerCase();
         import('moment/locale/de.js').then(() => {
             moment.locale(lang);
         } )
