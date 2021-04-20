@@ -1,3 +1,7 @@
+**NOTE**
+This pattern is not part of Patternslib at: https://github.com/Patternslib/Patterns/tree/master/src/pat/display-time
+This Repository is archived and will not recieve any more updates.
+
 # pat-display-time
 
 A [Patternslib](http://patternslib.com) pattern.
